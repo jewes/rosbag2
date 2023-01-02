@@ -95,7 +95,8 @@ PYBIND11_MODULE(_writer, m) {
   .def("open", &rosbag2_py::Writer<rosbag2_cpp::writers::SequentialWriter>::open)
   .def("write", &rosbag2_py::Writer<rosbag2_cpp::writers::SequentialWriter>::write)
   .def("remove_topic", &rosbag2_py::Writer<rosbag2_cpp::writers::SequentialWriter>::remove_topic)
-  .def("create_topic", &rosbag2_py::Writer<rosbag2_cpp::writers::SequentialWriter>::create_topic);
+  .def("create_topic", &rosbag2_py::Writer<rosbag2_cpp::writers::SequentialWriter>::create_topic)
+  .def("close", &rosbag2_py::Writer<rosbag2_cpp::writers::SequentialWriter>::close);
 
   pybind11::class_<rosbag2_py::Writer<rosbag2_compression::SequentialCompressionWriter>>(
     m, "SequentialCompressionWriter")
